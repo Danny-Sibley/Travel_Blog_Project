@@ -1,5 +1,5 @@
 /venv
-/travelcomplanyblog/__pycache__
+travelcomplanyblog/__pycache__
 travelcompanyblog/.DS_Store
 .DS_Store
 travelcompanyblog/core/__pycache__
