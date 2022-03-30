@@ -1,6 +1,6 @@
 from wsgiref.validate import validator
 from flask_wtf import FlaskForm
-from wtforms import StringField, PaswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo
 from wtforms import ValidationError 
 from flask_wtf.file import FileField, FileAllowed
@@ -14,7 +14,7 @@ class LoginForm(FlaskForm):
     
 class RegistrationForm(FlaskForm):
     email = StringField('Email',validators = [DataRequired(),Email()])
-    username = StringField('UserName',validators = [DataRequired()])      
+    username = StringField('Username',validators = [DataRequired()])      
     password = PasswordField('Password',validators = [DataRequired(), EqualTo('pass_confirm',message = 'Passwords must match' )]) 
     #checks hashed password with stored hash password  
     pass_confirm = PasswordField('Confirm Pasword', validators = [DataRequired()])  

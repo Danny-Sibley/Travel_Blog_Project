@@ -4,14 +4,14 @@ from flask import url_for, current_app
 
 def add_profile_pic(pic_upload, username):
     
-    filename = pic_upload,filename
+    filename = pic_upload.filename
     #grabs file extension to check later
     ext_type = filename.split('.')[-1]
     storage_filename = str(username) + '.' + ext_type
     
     #looks for static profile pics
-    filepath = os.path.join(current_app.root_path, 'static\profile_pics', storage_filename)
-    
+    filepath = os.path.join(current_app.root_path, 'static/profile_pics', storage_filename)
+    print (f' filepath print: {filepath}')
     output_size = (200,200)
     
     pic = Image.open(pic_upload)

@@ -1,14 +1,11 @@
-from travelcompanyblog.error_pages.handlers import error_pages
-from travelcompanyblog.core.views import core
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
-from travelcompanyblog.users.views import users 
 
 app = Flask(__name__)
 
-
+app.config['SECRET_KEY'] = 'mysecret'
 #########################
 ###### DATABASE SETUP####
 #########################
@@ -21,6 +18,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 Migrate(app,db)
 
+
 #########################
 ###### LOGIN CONFIGS ####
 #########################
@@ -29,7 +27,12 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 login_manager.login_view = 'users.login'
 
-#Blueprints 
+from travelcompanyblog.core.views import core
+from travelcompanyblog.users.views import users 
+from travelcompanyblog.error_pages.handlers import error_pages
+#########################
+###### Blueprinnts ######
+#########################
 app.register_blueprint(core)
 app.register_blueprint(error_pages)
 app.register_blueprint(users)

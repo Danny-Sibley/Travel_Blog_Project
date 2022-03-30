@@ -26,9 +26,24 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{url_for('core.info')}}">About</a>
                   </li>
+                  {% if current_user.is_authenticated %}
                   <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
+                    <a class="nav-link" href="{{url_for('users.logout')}}">Logout</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('users.account')}}">Account</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="">Create Post </a>
+                  </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('users.login')}}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('users.register')}}">Register</a>
+                  </li>
+                  {% endif %}
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown07XL" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown07XL">
