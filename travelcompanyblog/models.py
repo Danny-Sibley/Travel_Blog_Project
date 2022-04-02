@@ -38,7 +38,8 @@ class BlogPost(db.Model):
     
     date = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
     title =db.Column(db.String(140), nullable = False)
-    
+    text = db.Column(db.Text)
+
     def __init__ (self,title, text, user_id):
         self.title = title
         self.text = text
