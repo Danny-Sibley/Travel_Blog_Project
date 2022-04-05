@@ -30,15 +30,19 @@ def login():
     if form.validate_on_submit():
         #grabs user from db based off provided email
         user = User.query.filter_by(email = form.email.data).first()
-        if user.check_password(form.password.data) and user is not None:
-            login_user(user)
-            flash('Log in Success!')
-            #stores page user was trying to access before logging in 
-            next = request.args.get('next')
-            
-            if next ==None or not next[0] == '/':
-                next = url_for('core.index')
-            return redirect(next) 
+        if user is not None: 
+            if user.check_password(form.password.data):
+                login_user(user)
+                #stores page user was trying to access before logging in 
+                next = request.args.get('next')
+                
+                if next ==None or not next[0] == '/':
+                    next = url_for('core.blog')
+                return redirect(next) 
+            else:
+                flash('Log in Unsuccessful!')
+        else:
+            flash('Log in Unsuccessful!')
         
     return render_template('login.html', form = form)
         
