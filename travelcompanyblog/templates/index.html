@@ -28,7 +28,7 @@
                 {% if current_user.is_authenticated %}
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item ">
-                    <a class="nav-link active navbar-text" aria-current="page" href="{{url_for('core.index')}}">Home</a>
+                    <a class="nav-link navbar-text " aria-current="page" href="{{url_for('core.index')}}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link navbar-text" href="{{url_for('core.info')}}">About</a>
@@ -71,10 +71,7 @@
             <div class="text">
               <h2>Not All  </h2> 
               <h3>Who Wander Are Lost</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.</p>
+              <p>Welcome to the Parenting with Passports blog. Here we welcome all travelers from around the world. Explore the blog posts and contribute by signing up and sharing your own adventures. </p>
               <a href="{{url_for('core.blog')}}" >Explore Blog Posts</a>
             </div>
           </section>

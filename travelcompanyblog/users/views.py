@@ -12,15 +12,17 @@ users = Blueprint('users', __name__)
 def register():
     form = RegistrationForm()
     
-    #if user enters data and USer class passes checks of unique email and username 
     if form.validate_on_submit():
         user = User(email=form.email.data,
                     username=form.username.data,
                     password=form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Thanks for registration')
-        return redirect(url_for('users.login'))
+        #if USer class passes checks of unique email and username
+        try: 
+            db.session.add(user)
+            db.session.commit()
+            return redirect(url_for('users.login'))
+        except: 
+            flash('Registration Error: username or email already registered')
     return render_template('register.html', form = form)
 
 #login
@@ -40,9 +42,9 @@ def login():
                     next = url_for('core.blog')
                 return redirect(next) 
             else:
-                flash('Log in Unsuccessful!')
+                flash('Log in Unsuccessful: Incorrect Password')
         else:
-            flash('Log in Unsuccessful!')
+            flash('Log in Unsuccessful: Email Not Registered')
         
     return render_template('login.html', form = form)
         
@@ -56,11 +58,8 @@ def logout():
 @users.route('/account', methods = ['GET', 'POST'])
 @login_required
 def account():
-
     form = UpdateUserForm()
-
     if form.validate_on_submit():
-
         if form.picture.data:
             username = current_user.username
             pic = add_profile_pic(form.picture.data,username)

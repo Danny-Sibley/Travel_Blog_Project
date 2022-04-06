@@ -1,9 +1,20 @@
 {% extends 'base.html' %}
 {% block content  %}
-<div class = "container">
+<div class = "container mt-5 mb-5 col-12">
     <form class ='form-group' method= "POST">
         {{form.hidden_tag()}}
-
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <!-- <input type="text" class="form-control" id="exampleFormControlInput1"> -->
+            {{form.title(class = "form-control " )}}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Text</label>
+            <!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="22"></textarea> -->
+            {{form.text(class = "form-control", rows="22" )}}
+        </div>
+        {{form.submit(class = "btn btn-outline-info")}}
+        <!-- 
         <div class = "form-group">
         {{form.title.label(class = "form-control-label")}}
         {{form.title(class = "form-control form-control-lg")}}
@@ -15,6 +26,7 @@
         <div class = "form-group">
         {{form.submit(class = "btn btn-outline-info")}}
         </div>
+        -->
     </form>
 </div>
 
