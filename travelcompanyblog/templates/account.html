@@ -1,13 +1,8 @@
 {%extends "base.html"%}
 {%block content%}
-<!-- 
-    <div class =' container jumbotron p-4'>
-        <div align ='center'>
-            <h1 class = "pb-2"> Welcome to the page for {{current_user.username}} </h1>
-            <img align='center' src="{{ url_for('static', filename='profile_pics/' + current_user.profile_image) }}">
-        </div>
-    </div>
--->
+
+    
+
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5 text-center">
           <h1 class="display-5 fw-bold"> Welcome to the page for {{current_user.username}}</h1>
@@ -18,13 +13,16 @@
             <p> Email: {{current_user.email}} </p>
             <form method = "POST"  enctype="multipart/form-data" >
                 {{form.hidden_tag()}}
-            <div class ="form-group">
-                {{form.picture.label()}} {{form.picture }}
-            </div>
-            <div class ="form-group">
-                {{form.submit}}
-            </div>
-        </form>
+                <div class ="form-group">
+                    <p> Profile Picture</p> {{form.picture(class="form-control") }}
+                </div>
+                <div class ="form-group pt-4 ">
+                    {{form.submit (class ="btn btn-primary")}}
+                </div>
+            </form>
         </div>
     </div>
-    {%endblock%}
+
+
+
+{%endblock%}

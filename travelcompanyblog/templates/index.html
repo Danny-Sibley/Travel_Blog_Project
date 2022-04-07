@@ -9,22 +9,27 @@
       <script src="https://kit.fontawesome.com/52c2eaac57.js" crossorigin="anonymous"></script>
       <!-- Custom styles for this template -->
       <link href="static/css/style.css" rel="stylesheet">
+      <!-- favicon-->
+      <link rel="apple-touch-icon" sizes="180x180" href="/static/profile_pics/favicon.ico">
+      <link rel="icon" type="image/png" sizes="32x32" href="/sstatic/profile_pics/favicon.ico">
+      <link rel="icon" type="image/png" sizes="16x16" href="/static/profile_pics/favicon.ico">
+      <link rel="manifest" href="/site.webmanifest">
   </head>
     <body>
-      <div id = "container"> 
+      <div id ="container"> 
         <div id = "main">
           <!-- navbar-->
           <nav class="navbar navbar-bg fixed-top navbar-expand-md bg-faded">
         
-            <div class="container-xl">
+            <div class="container-xl"> 
               <a class="navbar-brand navbar-text " href="{{url_for('core.index')}}">Parenting With Passports</a>
-              <button class="navbar-toggler text-white " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation"> 
+              <button class="navbar-toggler text-white " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
               </button>
         
-              <div class="collapse navbar-collapse " id="navbarsExample07XL">
+              <div class="collapse navbar-collapse " id="navbarsExample07XL" >
                 {% if current_user.is_authenticated %}
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item ">
@@ -68,7 +73,7 @@
           <section class="showcase">
             <video src="static/travel-video.mp4" muted loop autoplay> </video> 
             <div class="overlay"></div>
-            <div class="text">
+            <div class="text ">
               <h2>Not All  </h2> 
               <h3>Who Wander Are Lost</h3>
               <p>Welcome to the Parenting with Passports blog. Here we welcome all travelers from around the world. Explore the blog posts and contribute by signing up and sharing your own adventures. </p>

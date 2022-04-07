@@ -39,11 +39,10 @@ padding:0;
     color:#fff
 }
 
-/* .navbar-bg{
+ .navbar-bg{
     background-color: rgba(40, 40, 40, 0.63);
     opacity: 0.9;
-} */
-
+} 
 
 .overlay {
     position:absolute;
@@ -60,6 +59,7 @@ padding:0;
     /* z-index: 10;  */
 
 }
+
 
 .text h2{
     font-size: 5em; 
