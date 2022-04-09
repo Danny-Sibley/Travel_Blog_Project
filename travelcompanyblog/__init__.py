@@ -2,17 +2,22 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
+import os
+from dotenv import load_dotenv
+#loads envirnoment variables 
+load_dotenv()
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'mysecret'
+
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 #########################
 ###### DATABASE SETUP####
 #########################
 
 # Scheme: "postgres+psycopg2://<USERNAME>:<PASSWORD>@<IP_ADDRESS>:<PORT>/<DATABASE_NAME>"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password@localhost:5432/Travel_Blog'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQLALCHEMY_DATABASE_URI")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv("SQLALCHEMY_TRACK_MODIFICATIONS")
 
 #creates db and migrations 
 db = SQLAlchemy(app)
