@@ -66,8 +66,8 @@ def account():
             current_user.profile_image = pic
 
         db.session.commit()
-        flash('User Account Updated')
         return redirect(url_for('users.account'))
+    
 
     profile_image = url_for('static', filename='profile_pics/' + current_user.profile_image)
     return render_template('account.html', profile_image=profile_image, form=form)
