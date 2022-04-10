@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- copied from original index page -->
 <div class="p-5 mb-4 bg-light rounded-3 row ">
     <div class="container-fluid py-5 text-center  ">
       <h1 class="display-5 fw-bold">Parenting with Passports Blog</h1>
@@ -15,7 +14,7 @@
     <div class ="card-body">
       <h2> <a class='card-title' href="{{url_for('blog_posts.blog_post',blog_post_id=post.id)}}"> {{post.title}} </a> <h2>
         
-      <a class=" h4 card-subtitle mb-2"  href="{{ url_for('users.user_posts', username = post.author.username)}}"> Written By: {{post.author.username}} </a>
+      <a class=" h4 card-subtitle mb-2 text-black"  href="{{ url_for('users.user_posts', username = post.author.username)}}"> Written By: {{post.author.username}} </a>
       <p class=" h5 card-subtitle mb-2 text-muted" style="padding-top:10px;" > Published on: {{post.date.strftime('%Y-%m-%d')}}</p>
       <a class = "btn btn-primary" href="{{url_for('blog_posts.blog_post',blog_post_id=post.id)}}"> Read Blog Post </a>
     </div>
