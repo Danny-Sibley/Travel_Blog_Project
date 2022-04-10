@@ -19,7 +19,7 @@ app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 
 # Scheme: "postgres+psycopg2://<USERNAME>:<PASSWORD>@<IP_ADDRESS>:<PORT>/<DATABASE_NAME>"
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQLALCHEMY_DATABASE_URI")
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQLALCHEMY_DATABASE_URI")
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://luykcqsozlpobq:ea5c115075c6c2d8b3d3dd02a7bab9e8bcaa050a0c2f391da5f89c05436f3396@ec2-3-223-213-207.compute-1.amazonaws.com:5432/dc05rabj2vakb3"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv("SQLALCHEMY_TRACK_MODIFICATIONS")
 
 #creates db and migrations 
