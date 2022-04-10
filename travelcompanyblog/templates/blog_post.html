@@ -4,7 +4,7 @@
     <h1> {{post.title}} </h1>
     <h2> Written by: <a href="{{url_for('users.user_posts', username = post.author.username)}}">{{post.author.username}} </a></h2>
     <p class ='text-muted'> Published: {{post.date.strftime('%B %d, %Y')}} </p>
-    <p class ="mt-4"> {{post.text}}</p>
+    <p class ="mt-4"> {{post.text|safe}}</p>
 
   
     {% if post.author == current_user %}

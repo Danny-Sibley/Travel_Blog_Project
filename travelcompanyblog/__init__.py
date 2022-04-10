@@ -4,11 +4,13 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 import os
 from dotenv import load_dotenv
+from flask_ckeditor import CKEditor
 #loads envirnoment variables 
 load_dotenv()
 
 app = Flask(__name__)
-
+#add CKeditor   
+ckeditor = CKEditor(app)
 
 app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 #########################
