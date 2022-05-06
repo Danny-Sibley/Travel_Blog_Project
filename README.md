@@ -7,3 +7,5 @@
 ### Project is split into core, blog_posts and users directories.
 
 ### Models file contains ORM to create Postgresql database
+
+### Live Demo at https://parenting-with-passports.herokuapp.com/
